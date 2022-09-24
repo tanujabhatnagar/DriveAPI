@@ -1,0 +1,64 @@
+<html>
+<head>
+<link href="webjars/bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src="webjars/jquery/3.6.1/js/jquery.min.js"></script>
+<script src="webjars/bootstrap/5.2.0/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="scripts/index.js"></script>
+<title>Google Drive API</title>
+</head>
+<body>
+<h1 class="display-4 text-center text-white">Welcome!!!</h1>
+	<div class="text-center text-white">You are logged in via Google
+		OAuth</div>
+	<div id="pages">
+		<div class="btn-group" role="group">
+			<button data-bs-toggle="collapse" data-bs-target="#uploadFile"
+				class="btn btn-primary">Upload File </button>
+			<button data-bs-toggle="collapse" data-bs-target="#fileList"
+				class="btn btn-primary">Display File List</button>
+			<button data-bs-toggle="collapse" data-bs-target="#folder"
+				class="btn btn-primary">Folder</button>
+				<button data-bs-toggle="collapse" data-bs-target="#watchChanges"
+				class="btn btn-primary">Watch Changes</button>
+		</div>
+		<div class="collapse" id="uploadFile">
+			<div class="card card-body">
+				Click following button to upload server side file.
+				<button class="btn btn-secondary" id="simpleUpload">Click
+					to upload File</button>
+			</div>
+		</div>
+		<div class="collapse" id="fileList">
+			<div class="card card-body">
+				To list files press refresh button.
+				<button class="btn btn-primary" id="refreshFileButton">Refresh</button>
+				<ul class="list-group" id="fileListContainer">
+
+				</ul>
+			</div>
+		</div>
+		<div class="collapse" id="folder">
+			<div class="card card-body">
+				Click below button to create a folder.
+				<button class="btn btn-primary" id="createFolderButton">Create Folder</button>
+				
+				<br/>
+				Click below button to upload file in a Folder.
+				<button class="btn btn-primary" id="uploadFileInFolder">Upload file in Folder</button>
+			</div>
+		</div>
+		<div class="collapse" >
+			<div class="card card-body">
+				Click following button to upload server side file.
+				<button class="btn btn-secondary" id="watchChanges">Refresh Changes</button>
+			</div>
+		</div>
+	</div>
+	<button onclick="authenticate().then(loadClient)">authorize and load</button>
+<button onclick="execute()">execute</button>
+<script src="https://apis.google.com/js/api.js"></script>
+
+</body>
+</html>
